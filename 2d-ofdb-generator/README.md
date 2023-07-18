@@ -1,36 +1,13 @@
-# FractalDB
+# 2D-OFDB (One-instance FractalDataBase)
+<p align="center"> <img src="../OFDB1k.png" /> <p align="center">These images show the full set of 2D-OFDB-1k</p>
+<!-- ![2D-OFDB-1k](../OFDB1k.png "2D-OFDB-1k") -->
 
 ## Summary
-
-The repository contains a Fractal Category Search, FractalDB Construction, Pre-training, and Fine-tuning in Python/PyTorch.
-
-The repository is based on the paper:
-Hirokatsu Kataoka, Kazushige Okayasu, Asato Matsumoto, Eisuke Yamagata, Ryosuke Yamada, Nakamasa Inoue, Akio Nakamura and Yutaka Satoh, "Pre-training without Natural Images", Asian Conference on Computer Vision (ACCV), 2020. <font color="red">(Best Paper Honorable Mention Award)</font> [[Project](https://hirokatsukataoka16.github.io/Pretraining-without-Natural-Images/)] [[PDF](https://openaccess.thecvf.com/content/ACCV2020/papers/Kataoka_Pre-training_without_Natural_Images_ACCV_2020_paper.pdf)] [[Dataset](https://hirokatsukataoka16.github.io/Pretraining-without-Natural-Images/#dataset)] [[Oral](http://hirokatsukataoka.net/pdf/accv20_kataoka_oral.pdf)] [[Poster](http://hirokatsukataoka.net/pdf/accv20_kataoka_poster.pdf)]
-
-## Updates
-
-**Update (May 22, 2021)**
-* Related project "Can Vision Transformers Learn without Natural Images?" was released. We achieved to train vision transformers (ViT) without natural images. [[Project](https://hirokatsukataoka16.github.io/Vision-Transformers-without-Natural-Images/)] [[PDF](https://arxiv.org/abs/2103.13023)] [[Code](https://github.com/nakashima-kodai/FractalDB-Pretrained-ViT-PyTorch)]
+このレポジトリでは，あなたは，2D-OFDBのデータセット構築ができる．2D-OFDBを作成するには，Fractal Category Searchをして，カテゴリとして決定されたパラメータを使って画像のレンダリングを行います．
+<!-- The 
+The repository contains a Fractal Category Search, FractalDB Construction, Pre-training, and Fine-tuning in Python/PyTorch. -->
 
 
-**Update (Jan. 8, 2021)**
-* Pre-training & Fine-tuning codes
-* Downloadable pre-training models [[Link](https://drive.google.com/drive/folders/1tTD-cKKEgBjacCi4ZJ6bRYOv6FsjtGt_?usp=sharing)]
-* Multi-thread preparation with ```param_search/parallel_dir.py```
-* Divide execution files into single-thread processing ```exe.sh``` and multi-thread processing ```exe_parallel.sh``` for FractalDB rendering.
-
-## Citation
-
-If you use this code, please cite the following paper:
-
-```bibtex
-@inproceedings{KataokaACCV2020,
-  author={Kataoka, Hirokatsu and Okayasu, Kazushige and Matsumoto, Asato and Yamagata, Eisuke and Yamada, Ryosuke and Inoue, Nakamasa and Nakamura, Akio and Satoh, Yutaka},
-  title={Pre-training without Natural Images},
-  booktitle={Asian Conference on Computer Vision (ACCV)},
-  year={2020},
-}
-```
 
 ## Requirements
 
@@ -40,43 +17,19 @@ If you use this code, please cite the following paper:
 * CuDNN (worked at 7.6)
 * Graphic board (worked at single/four NVIDIA V100)
 
-* Fine-tuning datasets
-If you would like to fine-tune on an image dataset, you must prepare conventional or self-defined datasets. [[This repository](https://github.com/chatflip/ImageRecognitionDataset)] includes a downloader as an optional way. To use the following execution files ```exe.sh``` and ```exe_parallel.sh```, you should set the downloaded CIFAR-10 dataset in ```./data``` as the following structure.
-
-```misc
-./
-  data/
-    CIFAR10/
-      train/
-        airplane/
-          0001.png
-          0002.png
-          ...
-        ...
-      val/
-        airplane/
-          0001.png
-          0002.png
-          ...
-        ...
-
-# Caution! We changed the dir name from 'test' to 'val'
-```
 
 ## Execution file
 
 We prepared execution files ```exe.sh``` and ```exe_parallel.sh``` in the top directory. The execution file contains our recommended parameters. Please type the following commands on your environment. You can execute the Fractal Category Search, FractalDB Construction, Pre-training, and Fine-tuning.
 
 ```bash
-chmod +x exe.sh
-./exe.sh
+bash exe.sh
 ```
 
-For a faster execution, you shuold run the ```exe_parallel.sh``` as follows. You must adjust the thread parameter ```numof_thread=40``` in the script depending on your computational resource.
+For a faster generate fractal image, you shuold run the ```exe_parallel.sh``` as follows. You must adjust the thread parameter ```numof_thread=40``` in the script depending on your computational resource.
 
 ```bash
-chmod +x exe_parallel.sh
-./exe_parallel.sh
+bash exe_parallel.sh
 ```
 
 
@@ -150,86 +103,3 @@ The structure of rendered FractalDB is constructed as follows.
   ...
 ```
 
-## Pre-training
-
-Run the code ```pretraining/main.py``` to create a FractalDB pre-trained model.
-
-```misc
-python pretraining/main.py
-```
-
-Please confirm a FractalDB is existing in ```./data``` directory. After the pre-training, a trained model is created like ```FractalDB-1000_resnet50_epoch90.pth``` and ```FractalDB-1000_resnet50_checkpoint.pth.tar```. Moreover, you can resume the training from a checkpoint by assigning ```--resume``` parameter. 
-
-These are the important parameters in pre-training.
-```misc
---dataset: model name
---path2traindb: path to FractalDB
---path2weight: path to trained weight
---resume: path to latest checkpoint
---usenet: CNN architecture
---epochs: end epoch
---numof_classes: number of pre-trained class
-```
-
-**Pre-trained models**
-Our pre-trained models are available in this [[Link](https://drive.google.com/drive/folders/1tTD-cKKEgBjacCi4ZJ6bRYOv6FsjtGt_?usp=sharing)].
-
-We have mainly prepared two different pre-trained models. These pre-trained models are trained on FractalDB in different categories (1k and 10k) and the same number of instances (1k).
-```misc
-FractalDB-1000_resnet50_epoch90.pth: --dataset=FractalDB-1000 --usenet=resnet50 --epochs=90 --numof_classes=1000
-FractalDB-10000_resnet50_epoch90.pth: --dataset=FractalDB-10000 --usenet=resnet50 --epochs=90 --numof_classes=10000
-```
-
-If you would like to additionally train from the pre-trained model, you command with the next fine-tuning code as follows.
-```misc
-# FractalDB-1000_resnet50_epoch90.pth
-python finetuning/main.py --path2db='/path/to/your/fine-tuning/data' --dataset='FractalDB-1000' --ft_dataset='YourDataset' --numof_pretrained_classes=1000 --usenet=resnet50
-
-# FractalDB-10000_resnet50_epoch90.pth
-python finetuning/main.py --path2db='/path/to/your/fine-tuning/data' --dataset='FractalDB-10000' --ft_dataset='YourDataset' --numof_pretrained_classes=10000 --usenet=resnet50
-```
-
-## Fine-tuning
-
-Run the code ```finetuning/main.py``` to additionally train any image datasets. However, in order to use the fine-tuning code, you must prepare a fine-tuning dataset (e.g., CIFAR-10/100, Pascal VOC 2012). Please look at ```Requirements``` for a dataset preparation and download option.
-
-```misc
-python finetuning/main.py --path2db='/path/to/your/fine-tuning/data' --ft_dataset='YourDataset'
-```
-
-These are the important parameters in fine-tuning.
-```misc
---dataset: model name (pre-training dataset)
---ft_dataset: model name (fine-tuning dataset)
---path2db: path to fine-tuning dataset
---path2weight: path to trained weight
---resume: path to latest checkpoint
---useepoch: use epoch in pre-training model
---usenet: CNN architecture
---epochs: end epoch
---numof_pretrained_classes: num of pre-training class
---numof_classes: number of pre-trained class
-```
-
-Anyway, you must arrange the directories ```train``` and ```val``` under the fine-tuning dataset (or rewrite the phase in data loader ```DBLoader```). The following dataset structure is also written in ```Requirements```.
-
-```misc
-./
-  data/
-    CIFAR10/
-      train/
-        airplane/
-          0001.png
-          0002.png
-          ...
-        ...
-      val/
-        airplane/
-          0001.png
-          0002.png
-          ...
-        ...
-```
-
-## Terms of use
-The authors affiliated in National Institute of Advanced Industrial Science and Technology (AIST), Tokyo Denki University (TDU), and Tokyo Institute of Technology (TITech) are not responsible for the reproduction, duplication, copy, sale, trade, resell or exploitation for any commercial purposes, of any portion of the images and any portion of derived the data. In no event will we be also liable for any other damages resulting from this data or any derived data.
