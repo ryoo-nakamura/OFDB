@@ -37,7 +37,7 @@ def conf():
     )
     parser.add_argument(
         "--instance",
-        default=10,
+        default=1,
         type=int,
         help="#instance, 10 => 1000 instance, 100 => 10,000 instance per category",
     )
@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
         make_directory(args.save_root, name)  # Make directory
         fractal_weight = 0
-        for weight in weights:
+        for weight in [weights[0]]:
             padded_fractal_weight = "%02d" % fractal_weight
 
             if args.draw_type == "point_gray":

@@ -3,24 +3,21 @@
 <!-- ![2D-OFDB-1k](../OFDB1k.png "2D-OFDB-1k") -->
 
 ## Summary
-このレポジトリでは，あなたは，2D-OFDBのデータセット構築ができる．2D-OFDBを作成するには，Fractal Category Searchをして，カテゴリとして決定されたパラメータを使って画像のレンダリングを行います．
-<!-- The 
-The repository contains a Fractal Category Search, FractalDB Construction, Pre-training, and Fine-tuning in Python/PyTorch. -->
+In this repository, you can construct a dataset of 2D-OFDB. To create 2D-OFDB, perform a Fractal Category Search and render images using the parameters decided as categories.
+
 
 
 
 ## Requirements
 
 * Python 3.x (worked at 3.7)
-* Pytorch 1.x (worked at 1.4)
-* CUDA (worked at 10.1)
-* CuDNN (worked at 7.6)
-* Graphic board (worked at single/four NVIDIA V100)
 
+The code for generating 2D-OFDB is the same as the environment used for Pre-training.
 
-## Execution file
+## 2D-OFDB Construction
 
-We prepared execution files ```exe.sh``` and ```exe_parallel.sh``` in the top directory. The execution file contains our recommended parameters. Please type the following commands on your environment. You can execute the Fractal Category Search, FractalDB Construction, Pre-training, and Fine-tuning.
+You can construct 2D-OFDB by running exe.sh and exe_parallel.sh. Choose which to use based on the environment you're using. The shell script file performs a Fractal Category Search and 2D-OFDB Construction.
+
 
 ```bash
 bash exe.sh
@@ -58,12 +55,12 @@ The structure of directories is constructed as follows.
   ...
 ```
 
-## FractalDB Construction
+## 2D-OFDB Construction
 
-Run the code ```fractal_renderer/make_fractaldb.py``` to construct FractalDB.
+Run the code ```fractal_renderer/make_2dofdb.py``` to construct 2D-OFDB.
 
 ```bash
-python fractal_renderer/make_fractaldb.py
+python fractal_renderer/make_2dofdb.py
 ```
 
 The code includes the following parameters.
@@ -77,29 +74,25 @@ The code includes the following parameters.
 --pad_size_y: y-coordinate padding size
 --iteration: #dot/#patch in a fractal image
 --draw_type: Rendering type. You can select "{point, patch}_{gray, color}"
---weight_csv: Weight parameter. You can find "./fractal_renderer/weights"
---instance: #instance. 10 -> 1000 instances per category, 100 -> 10,000 instances per category')
+--weight_csv: Weight parameter. You can find "./fractal_renderer/weights")
 ```
 
 
-The structure of rendered FractalDB is constructed as follows.
+The structure of rendered 2D-OFDB is constructed as follows.
 
 ```misc
 ./
   data/
-    FractalDB-1000/
+    2d-ofdb-1000/
       00000/
         00000_00_count_0_flip0.png
-        00000_00_count_0_flip1.png
-        00000_00_count_0_flip2.png
-        00000_00_count_0_flip3.png
         ...
       00001/
         00001_00_count_0_flip0.png
-        00001_00_count_0_flip1.png
-        00001_00_count_0_flip2.png
-        00001_00_count_0_flip3.png
         ...
   ...
 ```
+
+## Acknowledgements
+The 2D-OFDB generation code is based on [FractalDB](https://github.com/hirokatsukataoka16/FractalDB-Pretrained-ResNet-PyTorch).
 

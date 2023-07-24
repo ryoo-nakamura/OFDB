@@ -168,7 +168,7 @@ class ifs_function:
         patch.close()
         # Coordinate transformation
         image = image.transpose(Image.FLIP_TOP_BOTTOM)
-        for trans_type in range(4):
+        for trans_type in range(1):
             trans_image = self.__transpose(image, trans_type)
             trans_image.save(
                 os.path.join(

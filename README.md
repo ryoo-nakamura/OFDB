@@ -1,51 +1,34 @@
 # Pre-training Vision Transformers with Very Limited Synthesized Images (ICCV'23)
 
 ## Summary
-The repository contains 2D/3D-OFDB dataset Construction, Pre-training and Fine-tuning in Python/PyTorch. <br> 
-The repository is based on the paper: Ryo Nakamura, Hirokatsu Kataoka, Sora Takashima, Edgar Josafat MARTINEZ-NORIEGA, Rio Yokota and Nakamasa Inoue,
-"Pre-training Vision Transformers with Very Limited Synthesized Images", IEEE/CVF International Conference on Computer Vision (ICCV) 2023.
-[[Project](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)] 
-[[PDF](xxx)] 
-[[Dataset](#one-instance-fractaldatabase(ofdb))] 
+This repository contains the construction, pre-training, and fine-tuning of the 2D/3D-OFDB dataset in Python/PyTorch. <br>
+The repository is based on the paper by Ryo Nakamura, Hirokatsu Kataoka, Sora Takashima, Edgar Josafat Martinez Noriega, Rio Yokota, and Nakamasa Inoue, "Pre-training Vision Transformers with Very Limited Synthesized Images", presented at the IEEE/CVF International Conference on Computer Vision (ICCV) 2023.
+<!-- [[Project](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)]  -->
+<!-- [[PDF](xxx)]  -->
+[[Dataset](https://drive.google.com/drive/folders/1RIPySXDy9m1UH5AcGShwK9cRoxGNMHQf?usp=sharing)] 
 <!-- [[Poster](https://cvpr2023.thecvf.com/media/PosterPDFs/CVPR%202023/22854.png?t=1685632285.9741583)]  -->
 <!-- [[Supp](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/CVPR2023_VisualAtom_FDSL_Supplementary_Material.pdf)] -->
 
 <p align="center"> <img src="main_image.png" width="90%"/> <p align="center">Fine-tuning accuracy on CIFAR-100 for the number of images for pre-training. The line plot for ImageNet-1k indicates the results when using random sampling to reduce the data for pre-training. (b) One-instance fractal database (OFDB) consists of only 1,000 images in total. The figure shows the category representation. OFDB contains a single instance per category.</p>
 
-```bibtex
-@InProceedings{nakamura2023ofdb,
-    author    = {Ryo Nakamura, Hirokatsu Kataoka, Sora Takashima, Edgar Josafat MARTINEZ-NORIEGA, Rio Yokota and Nakamasa Inoue},
-    title     = {Pre-training Vision Transformers with Very Limited Synthesized Images},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision (ICCV)},
-    month     = {Octorber},
-    year      = {2023},
-    pages     = {xxx}
-}
-``` 
-
 ## One-instance FractalDataBase(OFDB)
-もし，あなたが2D/3D-OFDB-1k or 21kを使用したいのであれば，以下のDownload linkからダウンロードしてください．
-2D-OFDB-1kと21kについては，pngをtar.gzに圧縮したファイルを提供いたします．
-3D-OFDB-1kと21kについては，任意視点からのデータ拡張（レンダリング）のために，3Dmodelを共有いたします．
-3D-OFDBの生成コードが3d-ofdb-gereratorディレクトリに保管してあるので，そちらのREADMEを参照してください．
+If you wish to use 2D/3D-OFDB-1k or 21k, please download them from the link below. We provide files that compress png files into zip for both 2D-OFDB-1k and 21k. Similarly, we provide compressed files for 3D-OFDB-1k and 21k. The 3D-OFDB offers a dataset rendered from the 12 views that provide the highest pre-training effect. Hence, the directory contains images from 12 viewpoints. When training, you should code to load one image per directory. The generation code for 3D-OFDB is stored in the 3d-ofdb-generator directory. Please refer to its README for more details.
 
 | ![alt text](OFDB1k.png) | ![alt text](3D-OFDB1k.png) |
 |:---:|:---:|
-| Download link : [[2D-OFDB-1k](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)]  [[2D-OFDB-21k](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)]   |Download link : [[3D-OFDB-1k](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)] [3D-OFDB-21k](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)] |
+| Download link : [[2D-OFDB-1k](https://drive.google.com/file/d/1tVsOJlju5ATXj8GT0Qt9TzdBopuxGm6D/view?usp=sharing)]  [[2D-OFDB-21k](https://drive.google.com/file/d/1LV5_hBrDCB4_WyhSh65NA7TvinXMuWRh/view?usp=sharing)]   |Download link : [[3D-OFDB-1k](https://drive.google.com/file/d/1or-9gijxh-CGTAY1c5rcEtL4wFMZTU75/view?usp=sharing)] [3D-OFDB-21k](https://drive.google.com/file/d/153r8jHceplIY9T-rzxJZLqAmyzqV5TiO/view?usp=sharing)] |
 
-## 2D-OFDB ([README](visual_atomic_renderer/README.md))
-2D-OFDBのデータ生成を行いたい場合は，2D-OFDBのREADMEを参照のうえ，以下のコマンドを実行してください．
+## 2D-OFDB ([README](2d-ofdb-generator/README.md))
+If you want to generate data for 2D-OFDB, please refer to the 2D-OFDB README and execute the commands below.
 
 ```
 $ cd visual_atomic_renderer
 $ bash make_VisualAtom.sh
 ```
 
-You can also download raw 2D-OFDB-1k here : [zenodo](https://zenodo.org/record/7945009)
+## 3D-OFDB ([README](3d-ofdb-generator/README.md))
 
-## 3D-OFDB ([README](xxxx))
-
-3D-OFDBのデータ生成を行いたい場合は，3D-OFDBのREADMEを参照のうえ，以下のコマンドを実行してください．
+If you want to generate data for 3D-OFDB, please refer to the 3D-OFDB README and execute the commands below.
 
 ```
 $ cd 3d-ofdb-generator
@@ -54,23 +37,19 @@ $ bash make_VisualAtom.sh
 
 
 
-<style>
-table, th, td {
-  border: none;
-}
-</style>
-
-
 
 ## Requirements
 ここでは，生成した2D/3D-OFDBをpre-trainingまたは，Pre-trainined modelをfinetuningするのに必要な環境について紹介します．
 
 * Python 3.x (worked at 3.8.2)
 * CUDA (worked at 10.2)
-* CuDNN (worked at 8.0)
+* CuDNN (worked at 7.6)
 * NCCL (worked at 2.7)
 * OpenMPI (worked at 4.1.3)
 * Graphic board (worked at single/four NVIDIA V100)
+
+
+
 
 Please install packages with the following command.
 
@@ -143,15 +122,13 @@ Please see the script and code files for details on each arguments.
 
 ### Pre-trained models
 
-Our pre-trained models are available in this [[Link](https://drive.google.com/drive/folders/1OUSmOt01K-nDsr55-w1YweGDfsVtgz4N?usp=share_link)].
+Our pre-trained models are available in this [[Link]()].
 
 We have mainly prepared three different pre-trained models. 
-These pre-trained models are ViT-Tiny/Base (patch size of 16, input size of 224) pre-trained on VisualAtom-1k/21k and Swin-Base (patch size of 7, window size of 7, input size of 224) pre-trained on VisualAtom-21k.
+These pre-trained models are ViT-Tiny/Base (patch size of 16, input size of 224) pre-trained on 2D/3D-OFDB-1k/21k and Swin-Base (patch size of 7, window size of 7, input size of 224) pre-trained on 2D/3D-OFDB-21k.
 
 ```misc
-vit_tiny_with_visualatom_1k.pth.tar: timm model is deit_tiny_patch16_224, pre-trained on VisualAtom-1k
-vit_base_with_visualatom_21k.pth.tar: timm model is deit_base_patch16_224, pre-trained on VisualAtom-21k
-swin_base_with_visualatom_21k.pth.tar: timm model is swin_base_patch4_window7_224, pre-trained on VisualAtom-21k
+xxxx
 ```
 
 ## Fine-tuning
@@ -208,6 +185,19 @@ Basically, you can run the python script ```finetune.sh``` with the following co
 Or you can run the job script ```scripts/finetune.sh``` (support multiple nodes training with OpenMPI).
 
 Please see the script and code files for details on each arguments.
+
+
+## Citation
+If you use our work in your research, please cite our paper:
+```bibtex
+@InProceedings{nakamura2023ofdb,
+    title={Pre-training Vision Transformers with Very Limited Synthesized Images},
+    author={Ryo Nakamura, Hirokatsu Kataoka, Sora Takashima, Edgar Josafat MARTINEZ-NORIEGA, Rio Yokota and Nakamasa Inoue},
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision (ICCV)},
+    year={2023},
+}
+``` 
+
 
 ## Terms of use
 The authors affiliated in National Institute of Advanced Industrial Science and Technology (AIST) and Tokyo Institute of Technology (TITech) are not responsible for the reproduction, duplication, copy, sale, trade, resell or exploitation for any commercial purposes, of any portion of the images and any portion of derived the data. In no event will we be also liable for any other damages resulting from this data or any derived data.
