@@ -39,7 +39,7 @@ $ bash make_VisualAtom.sh
 
 
 ## Requirements
-ここでは，生成した2D/3D-OFDBをpre-trainingまたは，Pre-trainined modelをfinetuningするのに必要な環境について紹介します．
+This section introduces the environment required to pre-train the generated 2D/3D-OFDB or fine-tune the pre-trained model.
 
 * Python 3.x (worked at 3.8.2)
 * CUDA (worked at 10.2)
@@ -122,13 +122,14 @@ Please see the script and code files for details on each arguments.
 
 ### Pre-trained models
 
-Our pre-trained models are available in this [[Link]()].
+<!-- Our pre-trained models are available in this [[Link]()]. -->
+Our pre-trained models are available in this Link
 
 We have mainly prepared three different pre-trained models. 
 These pre-trained models are ViT-Tiny/Base (patch size of 16, input size of 224) pre-trained on 2D/3D-OFDB-1k/21k and Swin-Base (patch size of 7, window size of 7, input size of 224) pre-trained on 2D/3D-OFDB-21k.
 
 ```misc
-xxxx
+Pre-trained model comming soon
 ```
 
 ## Fine-tuning
