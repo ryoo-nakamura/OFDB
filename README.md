@@ -32,7 +32,7 @@ If you want to generate data for 3D-OFDB, please refer to the 3D-OFDB README and
 
 ```
 $ cd 3d-ofdb-generator
-$ bash make_VisualAtom.sh
+$ bash 3d-ofdb_render.sh
 ```
 
 
@@ -163,7 +163,7 @@ You should set the dataset as the following structure.
 
 Basically, you can run the python script ```finetune.sh``` with the following command.
 
-- Example : with deit_base, fine-tune CIFAR10 from pre-trained model (with VisualAtom-21k), 8 GPUs (Batch Size = 96×8 = 768)
+- Example : with deit_base, fine-tune CIFAR10 from pre-trained model (with 2D-OFDB-1k), 8 GPUs (Batch Size = 96×8 = 768)
 
     ```bash
     $ mpiexec -npernode 4 -np 8 \
@@ -178,7 +178,7 @@ Basically, you can run the python script ```finetune.sh``` with the following co
         model.optim.weight_decay=1.0e-4 model.scheduler.args.warmup_epochs=10 \
         epochs=1000 mode=finetune \
         logger.entity=YOUR_WANDB_ENTITY_NAME logger.project=YOUR_WANDB_PROJECT_NAME logger.group=YOUR_WANDB_GROUP_NAME \
-        logger.experiment=finetune_deit_base_CIFAR10_batch768_from_VisualAtom21000_1.0e-3 \
+        logger.experiment=finetune_deit_base_CIFAR10_batch768_from_2d-ofdb-21000_1.0e-3 \
         logger.save_epoch_freq=100 \
         output_dir=./output/finetune
     ```
