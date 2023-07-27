@@ -5,7 +5,7 @@ This repository contains the construction, pre-training, and fine-tuning of the 
 The repository is based on the paper by Ryo Nakamura, Hirokatsu Kataoka, Sora Takashima, Edgar Josafat Martinez Noriega, Rio Yokota, and Nakamasa Inoue, "Pre-training Vision Transformers with Very Limited Synthesized Images", presented at the IEEE/CVF International Conference on Computer Vision (ICCV) 2023.
 <!-- [[Project](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)]  -->
 <!-- [[PDF](xxx)]  -->
-[[Dataset](https://drive.google.com/drive/folders/1RIPySXDy9m1UH5AcGShwK9cRoxGNMHQf?usp=sharing)] 
+[[Dataset](https://drive.google.com/drive/folders/1KZfmu1OJKQZhwFKgiJx2mx6VFqq-pFTB?usp=share_link)] 
 <!-- [[Poster](https://cvpr2023.thecvf.com/media/PosterPDFs/CVPR%202023/22854.png?t=1685632285.9741583)]  -->
 <!-- [[Supp](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/CVPR2023_VisualAtom_FDSL_Supplementary_Material.pdf)] -->
 
@@ -16,7 +16,7 @@ If you wish to use 2D/3D-OFDB-1k or 21k, please download them from the link belo
 
 | ![alt text](OFDB1k.png) | ![alt text](3D-OFDB1k.png) |
 |:---:|:---:|
-| Download link : [[2D-OFDB-1k](https://drive.google.com/file/d/1tVsOJlju5ATXj8GT0Qt9TzdBopuxGm6D/view?usp=sharing)]  [[2D-OFDB-21k](https://drive.google.com/file/d/1LV5_hBrDCB4_WyhSh65NA7TvinXMuWRh/view?usp=sharing)]   |Download link : [[3D-OFDB-1k](https://drive.google.com/file/d/1or-9gijxh-CGTAY1c5rcEtL4wFMZTU75/view?usp=sharing)] [[3D-OFDB-21k](https://drive.google.com/file/d/153r8jHceplIY9T-rzxJZLqAmyzqV5TiO/view?usp=sharing)] |
+| Download link : [[2D-OFDB-1k](https://drive.google.com/file/d/1tVsOJlju5ATXj8GT0Qt9TzdBopuxGm6D/view?usp=share_link)]  [[2D-OFDB-21k](https://drive.google.com/file/d/1LV5_hBrDCB4_WyhSh65NA7TvinXMuWRh/view?usp=share_link)]   |Download link : [[3D-OFDB-1k](https://drive.google.com/file/d/1or-9gijxh-CGTAY1c5rcEtL4wFMZTU75/view?usp=share_link)] [[3D-OFDB-21k](https://drive.google.com/file/d/153r8jHceplIY9T-rzxJZLqAmyzqV5TiO/view?usp=share_link)] |
 
 ## 2D-OFDB ([README](2d-ofdb-generator/README.md))
 If you want to generate data for 2D-OFDB, please refer to the 2D-OFDB README and execute the commands below.
