@@ -16,7 +16,7 @@ If you wish to use 2D/3D-OFDB-1k or 21k, please download them from the link belo
 
 | ![alt text](OFDB1k.png) | ![alt text](3D-OFDB1k.png) |
 |:---:|:---:|
-| Download link : [[2D-OFDB-1k](https://drive.google.com/file/d/1tVsOJlju5ATXj8GT0Qt9TzdBopuxGm6D/view?usp=sharing)]  [[2D-OFDB-21k](https://drive.google.com/file/d/1LV5_hBrDCB4_WyhSh65NA7TvinXMuWRh/view?usp=sharing)]   |Download link : [[3D-OFDB-1k](https://drive.google.com/file/d/1or-9gijxh-CGTAY1c5rcEtL4wFMZTU75/view?usp=sharing)] [3D-OFDB-21k](https://drive.google.com/file/d/153r8jHceplIY9T-rzxJZLqAmyzqV5TiO/view?usp=sharing)] |
+| Download link : [[2D-OFDB-1k](https://drive.google.com/file/d/1tVsOJlju5ATXj8GT0Qt9TzdBopuxGm6D/view?usp=sharing)]  [[2D-OFDB-21k](https://drive.google.com/file/d/1LV5_hBrDCB4_WyhSh65NA7TvinXMuWRh/view?usp=sharing)]   |Download link : [[3D-OFDB-1k](https://drive.google.com/file/d/1or-9gijxh-CGTAY1c5rcEtL4wFMZTU75/view?usp=sharing)] [[3D-OFDB-21k](https://drive.google.com/file/d/153r8jHceplIY9T-rzxJZLqAmyzqV5TiO/view?usp=sharing)] |
 
 ## 2D-OFDB ([README](2d-ofdb-generator/README.md))
 If you want to generate data for 2D-OFDB, please refer to the 2D-OFDB README and execute the commands below.
