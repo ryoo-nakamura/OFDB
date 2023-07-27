@@ -22,8 +22,8 @@ If you wish to use 2D/3D-OFDB-1k or 21k, please download them from the link belo
 If you want to generate data for 2D-OFDB, please refer to the 2D-OFDB README and execute the commands below.
 
 ```
-$ cd visual_atomic_renderer
-$ bash make_VisualAtom.sh
+$ cd 2d-ofdb-generator
+$ bash exe_parallel.sh
 ```
 
 ## 3D-OFDB ([README](3d-ofdb-generator/README.md))
