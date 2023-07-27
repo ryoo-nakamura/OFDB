@@ -34,7 +34,8 @@ If you want to generate data for 3D-OFDB, please refer to the 3D-OFDB README and
 $ cd 3d-ofdb-generator
 $ bash 3d-ofdb_render.sh
 ```
-
+Note: You will need to set up your environment.
+To set up the environment, check REDOME in 3d-ofdb.
 
 
 
