@@ -41,7 +41,7 @@ To set up the environment, check REDOME in 3d-ofdb.
 ## Requirements
 This section introduces the environment required to pre-train the generated 2D/3D-OFDB or fine-tune the pre-trained model.
 
-* Python 3.x (worked at 3.8.2)
+* Python 3.x (worked at 3.7.9)
 * CUDA (worked at 10.2)
 * CuDNN (worked at 7.6)
 * NCCL (worked at 2.7)
@@ -129,7 +129,16 @@ We have mainly prepared three different pre-trained models.
 These pre-trained models are ViT-Tiny/Base (patch size of 16, input size of 224) pre-trained on 2D/3D-OFDB-1k/21k and Swin-Base (patch size of 7, window size of 7, input size of 224) pre-trained on 2D/3D-OFDB-21k.
 
 ```misc
-Pre-trained model comming soon
+pretrain_deit_tiny_2d-ofdb1k_patch_lr1.0e-3_epochs80000_bs256-last.pth #2D-OFDB-1k pre-training for ViT-T
+
+pretrain_deit_tiny_3d-ofdb1k_patch_lr1.0e-3_epochs80000_bs256-last.pth #2D-OFDB-1k pre-training for ViT-T
+
+pretrain_deit_tiny_2d-ofdb21k_patch_lr5.0e-4_epochs15238_bs1024_amp-last.pth.tar #2D-OFDB-21k pre-training for ViT-T
+
+pretrain_deit_tiny_3d-ofdb21k_edgar_lr5.0e-4_epochs15238_bs1024_amp-last.pth.tar #3D-OFDB-21k pre-training for ViT-T
+
+
+Other pre-trained models will be available on another day
 ```
 
 ## Fine-tuning
