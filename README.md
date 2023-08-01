@@ -4,7 +4,7 @@
 This repository contains the construction, pre-training, and fine-tuning of the 2D/3D-OFDB dataset in Python/PyTorch. <br>
 The repository is based on the paper by Ryo Nakamura, Hirokatsu Kataoka, Sora Takashima, Edgar Josafat Martinez Noriega, Rio Yokota, and Nakamasa Inoue, "Pre-training Vision Transformers with Very Limited Synthesized Images", presented at the IEEE/CVF International Conference on Computer Vision (ICCV) 2023.
 <!-- [[Project](https://masora1030.github.io/Visual-Atoms-Pre-training-Vision-Transformers-with-Sinusoidal-Waves/)]  -->
-[[PDF](https://arxiv.org/abs/2307.14710v1)] 
+[[arXiv](https://arxiv.org/abs/2307.14710)] 
 [[Dataset](https://drive.google.com/drive/folders/1KZfmu1OJKQZhwFKgiJx2mx6VFqq-pFTB?usp=share_link)] 
 [[Supp](https://drive.google.com/file/d/1x7eV8jvZOrpdrQFP4tgfiH7HS9wIg53d/view?usp=share_link)]
 
@@ -122,8 +122,8 @@ Please see the script and code files for details on each arguments.
 
 ### Pre-trained models
 
-<!-- Our pre-trained models are available in this [[Link]()]. -->
-Our pre-trained models are available in this Link
+Our pre-trained models are available in this [[Link](https://drive.google.com/drive/folders/1GUlRQwRPw0qx56L1Voez6RulYXGLgmuw?usp=share_link)].
+<!-- Our pre-trained models are available in this Link -->
 
 We have mainly prepared three different pre-trained models. 
 These pre-trained models are ViT-Tiny/Base (patch size of 16, input size of 224) pre-trained on 2D/3D-OFDB-1k/21k and Swin-Base (patch size of 7, window size of 7, input size of 224) pre-trained on 2D/3D-OFDB-21k.
