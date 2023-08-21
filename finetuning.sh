@@ -5,7 +5,7 @@ export NGPUS=8
 export NPERNODE=4
 
 
-mpiexec -npernode ${NPERNODE} -np ${NGPUS} python -B finetune.py data=colorimagefolder \
+mpiexec -npernode ${NPERNODE} -np ${NGPUS} python -B main.py data=colorimagefolder \
     data.baseinfo.name=CIFAR10 data.baseinfo.num_classes=10 \
     data.trainset.root=/PATH/TO/CIFAR10/TRAIN data.baseinfo.train_imgs=50000 \
     data.valset.root=/PATH/TO/CIFAR10/VAL data.baseinfo.val_imgs=10000 \
